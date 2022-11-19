@@ -9,10 +9,13 @@ class MyTheme {
 
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
       centerTitle: true,
       elevation: 0,
+      iconTheme: IconThemeData(
+        color: blackColor,
+      ),
     ),
     textTheme: TextTheme(
       headline1: TextStyle(
