@@ -50,10 +50,10 @@ class _SebahScreenState extends State<SebahScreen> {
               ],
             ),
             const SizedBox(
-              height: 15,
+              height: 20,
             ),
             Text(
-              'عدد التسبيحات',
+              'Number of Praises',
               style:
                   Theme.of(context).textTheme.headline2?.copyWith(fontSize: 22),
             ),
