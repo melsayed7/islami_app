@@ -18,9 +18,7 @@ class SurahName extends StatelessWidget {
       },
       child: Text(
         name,
-        style: Theme.of(context).textTheme.headline1?.copyWith(
-              fontSize: 25,
-            ),
+        style: Theme.of(context).textTheme.headline2,
         textAlign: TextAlign.center,
       ),
     );

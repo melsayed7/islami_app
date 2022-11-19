@@ -19,11 +19,15 @@ class MyTheme {
     ),
     textTheme: TextTheme(
       headline1: TextStyle(
-        color: blackColor,
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
+          color: blackColor,
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+        ),
+        headline2: TextStyle(
+          color: blackColor,
+          fontSize: 22,
+          fontWeight: FontWeight.w700,
+        )),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: blackColor,
       unselectedItemColor: whiteColor,
