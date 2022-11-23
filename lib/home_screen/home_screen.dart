@@ -27,7 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: [
         Image.asset(
-          'assets/images/background_image.png',
+          //'assets/images/background_image.png',
+          'assets/images/background_image_night.png',
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.fill,
@@ -40,7 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           bottomNavigationBar: Theme(
-            data: Theme.of(context).copyWith(canvasColor: MyTheme.goldColor),
+            data:
+                Theme.of(context).copyWith(canvasColor: MyTheme.bgNavBarColor),
             child: BottomNavigationBar(
               currentIndex: currentIndex,
               onTap: (index) {

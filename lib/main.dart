@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (context) => HomeScreen(),
         SurahNameDetails.routeName: (context) => SurahNameDetails(),
       },
-      theme: MyTheme.lightTheme,
-      darkTheme: MyTheme.darkTheme,
+      theme: MyTheme.darkTheme,
+      //darkTheme: MyTheme.darkTheme,
     );
   }
 }
