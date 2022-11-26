@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/my_theme.dart';
 
 class SebahScreen extends StatefulWidget {
@@ -46,7 +47,7 @@ class _SebahScreenState extends State<SebahScreen> {
             height: 20,
           ),
           Text(
-            'Number of Praises',
+            AppLocalizations.of(context)!.numberOfPraises,
             style: Theme.of(context).textTheme.headline2?.copyWith(
                   fontSize: 22,
                 ),
@@ -60,7 +61,7 @@ class _SebahScreenState extends State<SebahScreen> {
             decoration: BoxDecoration(
                 //141A2E
                 //B7935F
-                color: const Color(0xff141A2E),
+                color: const Color(0xffB7935F),
                 borderRadius: BorderRadius.circular(20)),
             child: Text('$counter',
                 style: Theme.of(context)
@@ -81,7 +82,7 @@ class _SebahScreenState extends State<SebahScreen> {
                 backgroundColor:
                     //Color(0xffB7935F)
                     //Color(0xffFACC1D)
-                    MaterialStateProperty.all(const Color(0xffFACC1D)),
+                    MaterialStateProperty.all(const Color(0xffB7935F)),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ))),

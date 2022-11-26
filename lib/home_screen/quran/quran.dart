@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/home_screen/quran/surah_name.dart';
 import 'package:islami_app/my_theme.dart';
 
@@ -132,7 +133,7 @@ class QuranScreen extends StatelessWidget {
           thickness: 4,
         ),
         Text(
-          'Surah Name',
+          AppLocalizations.of(context)!.surahName,
           style: Theme.of(context).textTheme.headline2,
         ),
         Divider(

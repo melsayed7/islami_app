@@ -10,8 +10,8 @@ class SurahNameDetails extends StatelessWidget {
         ModalRoute.of(context)?.settings.arguments as SurahNameDetailsArgs;
     return Stack(children: [
       Image.asset(
-        'assets/images/background_image_night.png',
-        // 'assets/images/background_image.png',
+        // 'assets/images/background_image_night.png',
+        'assets/images/background_image.png',
         width: double.infinity,
         height: double.infinity,
         fit: BoxFit.fill,
