@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/my_theme.dart';
 
 class RadioScreen extends StatelessWidget {
@@ -11,7 +12,7 @@ class RadioScreen extends StatelessWidget {
       children: [
         Image.asset('assets/images/radio_image.png'),
         Text(
-          'Holy Quran Radio',
+          AppLocalizations.of(context)!.holyQuranRadio,
           style: Theme.of(context).textTheme.headline2,
         ),
         Row(

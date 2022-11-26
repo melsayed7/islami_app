@@ -4,5 +4,15 @@
 "hadeth" : "الحديث",
 "radio" : "الاذاعة",
 "sebah" : "التسبيح",
-"settings": "الاعدادات"
+"settings": "الاعدادات",
+"surahName" : "اسم السورة",
+"numberOfPraises" : "عدد التسبيحات",
+"hadethName" : "اسم الحديث",
+"language" : "اللغة",
+"english" : "الانجليزية",
+"arabic" : "العربية",
+"theming" : "النمط",
+"dark" : "داكن",
+"light" : "مضئ",
+"holyQuranRadio" : "أذاعة القران الكريم"
 }

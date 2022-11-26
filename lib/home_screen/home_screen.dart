@@ -4,7 +4,7 @@ import 'package:islami_app/home_screen/hadeth/hadeth.dart';
 import 'package:islami_app/home_screen/quran/quran.dart';
 import 'package:islami_app/home_screen/radio/radio.dart';
 import 'package:islami_app/home_screen/sebah/sebah.dart';
-import 'package:islami_app/home_screen/settings/Settings.dart';
+import 'package:islami_app/home_screen/settings/settings.dart';
 import 'package:islami_app/my_theme.dart';
 
 class HomeScreen extends StatefulWidget {

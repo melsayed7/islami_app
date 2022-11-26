@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/my_theme.dart';
 
 class HadethScreen extends StatelessWidget {
@@ -14,7 +15,7 @@ class HadethScreen extends StatelessWidget {
           thickness: 4,
         ),
         Text(
-          'Alahadith',
+          AppLocalizations.of(context)!.hadethName,
           style: Theme.of(context).textTheme.headline2,
         ),
         Divider(

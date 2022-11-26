@@ -10,6 +10,7 @@ class MyTheme {
   static Color bgNavBarColor = const Color(0xff141A2E);
 
   static ThemeData lightTheme = ThemeData(
+    primaryColor: goldColor,
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
@@ -20,7 +21,7 @@ class MyTheme {
       ),
     ),
     textTheme: TextTheme(
-      headline1: TextStyle(
+        headline1: TextStyle(
           color: blackColor,
           fontSize: 30,
           fontWeight: FontWeight.bold,
@@ -37,6 +38,7 @@ class MyTheme {
   );
 
   static ThemeData darkTheme = ThemeData(
+    primaryColor: bgNavBarColor,
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
