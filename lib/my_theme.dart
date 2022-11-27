@@ -7,9 +7,12 @@ class MyTheme {
 
   static Color goldColor = const Color(0xffB7935F);
 
-  static Color bgNavBarColor = const Color(0xff141A2E);
+  static Color darkColor = const Color(0xff141A2E);
+
+  static Color yellowColor = const Color(0xffFACC1D);
 
   static ThemeData lightTheme = ThemeData(
+    primaryColor: goldColor,
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
@@ -19,17 +22,23 @@ class MyTheme {
         color: blackColor,
       ),
     ),
-    textTheme: TextTheme(
+    primaryTextTheme: TextTheme(
       headline1: TextStyle(
-          color: blackColor,
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-        ),
-        headline2: TextStyle(
-          color: blackColor,
-          fontSize: 22,
-          fontWeight: FontWeight.w700,
-        )),
+        color: blackColor,
+        fontSize: 25,
+        fontWeight: FontWeight.bold,
+      ),
+      subtitle1: TextStyle(
+        color: blackColor,
+        fontSize: 22,
+        fontWeight: FontWeight.w700,
+      ),
+      subtitle2: TextStyle(
+        color: whiteColor,
+        fontSize: 24,
+        fontWeight: FontWeight.w700,
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: blackColor,
       unselectedItemColor: whiteColor,
@@ -37,6 +46,7 @@ class MyTheme {
   );
 
   static ThemeData darkTheme = ThemeData(
+    primaryColor: darkColor,
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
@@ -45,19 +55,25 @@ class MyTheme {
         iconTheme: IconThemeData(
           color: whiteColor,
         )),
-    textTheme: TextTheme(
-        headline1: TextStyle(
-          color: whiteColor,
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-        ),
-        headline2: TextStyle(
-          color: whiteColor,
-          fontSize: 22,
-          fontWeight: FontWeight.w700,
-        )),
+    primaryTextTheme: TextTheme(
+      headline1: TextStyle(
+        color: whiteColor,
+        fontSize: 25,
+        fontWeight: FontWeight.bold,
+      ),
+      subtitle1: TextStyle(
+        color: yellowColor,
+        fontSize: 22,
+        fontWeight: FontWeight.w700,
+      ),
+      subtitle2: TextStyle(
+        color: blackColor,
+        fontSize: 24,
+        fontWeight: FontWeight.w700,
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      selectedItemColor: goldColor,
+      selectedItemColor: yellowColor,
       unselectedItemColor: whiteColor,
     ),
   );

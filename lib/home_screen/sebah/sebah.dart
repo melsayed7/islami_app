@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/my_theme.dart';
+import 'package:islami_app/provider/appProvider.dart';
+import 'package:provider/provider.dart';
 
 class SebahScreen extends StatefulWidget {
   static const String routeName = 'sebah-screen';
@@ -22,6 +25,7 @@ class _SebahScreenState extends State<SebahScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppProvider>(context);
     return Scaffold(
       body: Column(
         children: [
@@ -30,14 +34,18 @@ class _SebahScreenState extends State<SebahScreen> {
             children: [
               Container(
                 margin: const EdgeInsets.only(top: 40, left: 80),
-                child: Image.asset('assets/images/head_of_seb7a.png'),
+                child: Image.asset('assets/images/head_of_seb7a.png',
+                    color: provider.isDarkMode() ? MyTheme.yellowColor : null),
               ),
               Container(
                 padding: const EdgeInsets.only(top: 120),
                 alignment: AlignmentDirectional.topCenter,
                 child: Transform.rotate(
                   angle: angle,
-                  child: Image.asset('assets/images/body_of_seb7a.png'),
+                  child: Image.asset(
+                    'assets/images/body_of_seb7a.png',
+                    color: provider.isDarkMode() ? MyTheme.yellowColor : null,
+                  ),
                 ),
               ),
             ],
@@ -46,10 +54,10 @@ class _SebahScreenState extends State<SebahScreen> {
             height: 20,
           ),
           Text(
-            'Number of Praises',
-            style: Theme.of(context).textTheme.headline2?.copyWith(
-                  fontSize: 22,
-                ),
+            AppLocalizations.of(context)!.numberOfPraises,
+            style: provider.isDarkMode()
+                ? Theme.of(context).primaryTextTheme.headline1
+                : Theme.of(context).primaryTextTheme.headline1,
           ),
           const SizedBox(
             height: 10,
@@ -58,15 +66,16 @@ class _SebahScreenState extends State<SebahScreen> {
             padding: const EdgeInsets.all(20),
             margin: const EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
-                //141A2E
-                //B7935F
-                color: const Color(0xff141A2E),
+                color: provider.isDarkMode()
+                    ? const Color(0xff141A2E)
+                    : const Color(0xffB7935F),
                 borderRadius: BorderRadius.circular(20)),
-            child: Text('$counter',
-                style: Theme.of(context)
-                    .textTheme
-                    .headline1
-                    ?.copyWith(fontSize: 25)),
+            child: Text(
+              '$counter',
+              style: provider.isDarkMode()
+                  ? Theme.of(context).primaryTextTheme.headline1
+                  : Theme.of(context).primaryTextTheme.headline1,
+            ),
           ),
           const SizedBox(
             height: 10,
@@ -78,18 +87,18 @@ class _SebahScreenState extends State<SebahScreen> {
               });
             },
             style: ButtonStyle(
-                backgroundColor:
-                    //Color(0xffB7935F)
-                    //Color(0xffFACC1D)
-                    MaterialStateProperty.all(const Color(0xffFACC1D)),
+                backgroundColor: MaterialStateProperty.all(provider.isDarkMode()
+                    ? const Color(0xffFACC1D)
+                    : const Color(0xffB7935F)),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ))),
-            child: Text(tasbeehat[index],
-                style: Theme.of(context)
-                    .textTheme
-                    .headline2
-                    ?.copyWith(color: MyTheme.blackColor, fontSize: 27)),
+            child: Text(
+              tasbeehat[index],
+              style: provider.isDarkMode()
+                  ? Theme.of(context).primaryTextTheme.subtitle2
+                  : Theme.of(context).primaryTextTheme.subtitle2,
+            ),
           ),
         ],
       ),
