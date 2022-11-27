@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app/home_screen/hadeth/hadeth_item_content.dart';
 import 'package:islami_app/home_screen/home_screen.dart';
 import 'package:islami_app/my_theme.dart';
 import 'package:islami_app/provider/appProvider.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
         SurahNameDetails.routeName: (context) => SurahNameDetails(),
+        HadethItemContent.routeName: (context) => HadethItemContent(),
       },
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,

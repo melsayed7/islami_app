@@ -26,7 +26,7 @@ class RadioScreen extends StatelessWidget {
               child: IconButton(
                   onPressed: () {},
                   icon: Icon(
-                    Icons.skip_previous,
+                    Icons.skip_next,
                     color: provider.isDarkMode()
                         ? MyTheme.yellowColor
                         : MyTheme.goldColor,
@@ -48,7 +48,7 @@ class RadioScreen extends StatelessWidget {
               child: IconButton(
                   onPressed: () {},
                   icon: Icon(
-                    Icons.skip_next,
+                    Icons.skip_previous,
                     color: provider.isDarkMode()
                         ? MyTheme.yellowColor
                         : MyTheme.goldColor,

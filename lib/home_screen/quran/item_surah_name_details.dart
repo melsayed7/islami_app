@@ -12,16 +12,13 @@ class ItemSurahNameDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<AppProvider>(context);
-    return Container(
-      child: Text(
-        '$name(${index + 1})',
-        textAlign: TextAlign.center,
-        textDirection: TextDirection.rtl,
-        style: TextStyle(
-          fontSize: 24,
-          color:
-              provider.isDarkMode() ? MyTheme.yellowColor : MyTheme.blackColor,
-        ),
+    return Text(
+      '$name(${index + 1})',
+      textAlign: TextAlign.center,
+      textDirection: TextDirection.rtl,
+      style: TextStyle(
+        fontSize: 24,
+        color: provider.isDarkMode() ? MyTheme.yellowColor : MyTheme.blackColor,
       ),
     );
   }
