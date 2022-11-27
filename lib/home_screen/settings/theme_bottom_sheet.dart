@@ -16,7 +16,7 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
   Widget build(BuildContext context) {
     var provider = Provider.of<AppProvider>(context);
     return Container(
-      padding: EdgeInsets.all(18),
+      padding: const EdgeInsets.all(18),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -45,20 +45,23 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
   }
 
   Widget getSelectedTheme(String text) {
+    var provider = Provider.of<AppProvider>(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           text,
-          style: Theme.of(context)
-              .textTheme
-              .headline2
-              ?.copyWith(fontSize: 18, color: MyTheme.goldColor),
+          style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: provider.isDarkMode()
+                  ? MyTheme.darkColor
+                  : MyTheme.goldColor),
         ),
         Icon(
           Icons.check,
           size: 25,
-          color: Theme.of(context).primaryColor,
+          color: provider.isDarkMode() ? MyTheme.darkColor : MyTheme.goldColor,
         )
       ],
     );
@@ -67,7 +70,9 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
   Widget getUnSelectedTheme(String text) {
     return Text(
       text,
-      style: Theme.of(context).textTheme.headline2?.copyWith(fontSize: 18),
+      style: TextStyle(
+        fontSize: 20,
+      ),
     );
   }
 }

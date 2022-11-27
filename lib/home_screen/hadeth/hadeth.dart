@@ -16,7 +16,7 @@ class HadethScreen extends StatelessWidget {
         ),
         Text(
           AppLocalizations.of(context)!.hadethName,
-          style: Theme.of(context).textTheme.headline2,
+          style: Theme.of(context).primaryTextTheme.headline1,
         ),
         Divider(
           color: MyTheme.goldColor,

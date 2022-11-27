@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/home_screen/settings/language_bottom_sheet.dart';
 import 'package:islami_app/home_screen/settings/theme_bottom_sheet.dart';
+import 'package:islami_app/my_theme.dart';
 import 'package:islami_app/provider/appProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +19,9 @@ class Settings extends StatelessWidget {
         children: [
           Text(
             AppLocalizations.of(context)!.language,
-            style: Theme.of(context).textTheme.headline2,
+            style: provider.isDarkMode()
+                ? Theme.of(context).primaryTextTheme.headline1
+                : Theme.of(context).primaryTextTheme.headline1,
           ),
           const SizedBox(
             height: 18,
@@ -40,11 +43,16 @@ class Settings extends StatelessWidget {
                     provider.appLanguage == 'en'
                         ? AppLocalizations.of(context)!.english
                         : AppLocalizations.of(context)!.arabic,
-                    style: Theme.of(context).textTheme.headline2,
+                    style: provider.isDarkMode()
+                        ? Theme.of(context).primaryTextTheme.headline1
+                        : Theme.of(context).primaryTextTheme.headline1,
                   ),
-                  const Icon(
+                  Icon(
                     Icons.arrow_drop_down_outlined,
                     size: 30,
+                    color: provider.isDarkMode()
+                        ? MyTheme.whiteColor
+                        : MyTheme.blackColor,
                   ),
                 ],
               ),
@@ -55,7 +63,9 @@ class Settings extends StatelessWidget {
           ),
           Text(
             AppLocalizations.of(context)!.theming,
-            style: Theme.of(context).textTheme.headline2,
+            style: provider.isDarkMode()
+                ? Theme.of(context).primaryTextTheme.headline1
+                : Theme.of(context).primaryTextTheme.headline1,
           ),
           const SizedBox(
             height: 18,
@@ -77,11 +87,16 @@ class Settings extends StatelessWidget {
                     provider.appMode == ThemeMode.light
                         ? AppLocalizations.of(context)!.light
                         : AppLocalizations.of(context)!.dark,
-                    style: Theme.of(context).textTheme.headline2,
+                    style: provider.isDarkMode()
+                        ? Theme.of(context).primaryTextTheme.headline1
+                        : Theme.of(context).primaryTextTheme.headline1,
                   ),
-                  const Icon(
+                  Icon(
                     Icons.arrow_drop_down_outlined,
                     size: 30,
+                    color: provider.isDarkMode()
+                        ? MyTheme.whiteColor
+                        : MyTheme.blackColor,
                   ),
                 ],
               ),

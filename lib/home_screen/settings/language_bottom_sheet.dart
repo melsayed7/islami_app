@@ -22,8 +22,7 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
         children: [
           InkWell(
             onTap: () {
-              provider.changeLanguage(
-                  'en' /*AppLocalizations.of(context)!.english*/);
+              provider.changeLanguage('en');
             },
             child: provider.appLanguage == 'en'
                 ? getSelectedLanguage(AppLocalizations.of(context)!.english)
@@ -34,8 +33,7 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
           ),
           InkWell(
             onTap: () {
-              provider.changeLanguage(
-                  'ar' /*AppLocalizations.of(context)!.arabic*/);
+              provider.changeLanguage('ar');
             },
             child: provider.appLanguage == 'ar'
                 ? getSelectedLanguage(AppLocalizations.of(context)!.arabic)
@@ -47,20 +45,23 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   }
 
   Widget getSelectedLanguage(String text) {
+    var provider = Provider.of<AppProvider>(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           text,
-          style: Theme.of(context)
-              .textTheme
-              .headline2
-              ?.copyWith(fontSize: 18, color: MyTheme.goldColor),
+          style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: provider.isDarkMode()
+                  ? MyTheme.darkColor
+                  : MyTheme.goldColor),
         ),
         Icon(
           Icons.check,
           size: 25,
-          color: Theme.of(context).primaryColor,
+          color: provider.isDarkMode() ? MyTheme.darkColor : MyTheme.goldColor,
         )
       ],
     );
@@ -69,7 +70,9 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   Widget getUnSelectedLanguage(String text) {
     return Text(
       text,
-      style: Theme.of(context).textTheme.headline2?.copyWith(fontSize: 18),
+      style: TextStyle(
+        fontSize: 20,
+      ),
     );
   }
 }

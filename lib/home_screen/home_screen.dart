@@ -6,6 +6,8 @@ import 'package:islami_app/home_screen/radio/radio.dart';
 import 'package:islami_app/home_screen/sebah/sebah.dart';
 import 'package:islami_app/home_screen/settings/settings.dart';
 import 'package:islami_app/my_theme.dart';
+import 'package:islami_app/provider/appProvider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home_screen';
@@ -27,24 +29,33 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppProvider>(context);
     return Stack(
       children: [
-        Image.asset(
-          'assets/images/background_image.png',
-          //'assets/images/background_image_night.png',
-          width: double.infinity,
-          height: double.infinity,
-          fit: BoxFit.fill,
-        ),
+        provider.isDarkMode()
+            ? Image.asset(
+                'assets/images/background_image_night.png',
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.fill,
+              )
+            : Image.asset(
+                'assets/images/background_image.png',
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.fill,
+              ),
         Scaffold(
           appBar: AppBar(
             title: Text(
               AppLocalizations.of(context)!.islami,
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).primaryTextTheme.headline1,
             ),
           ),
           bottomNavigationBar: Theme(
-            data: Theme.of(context).copyWith(canvasColor: MyTheme.goldColor),
+            data: provider.isDarkMode()
+                ? Theme.of(context).copyWith(canvasColor: MyTheme.darkColor)
+                : Theme.of(context).copyWith(canvasColor: MyTheme.goldColor),
             child: BottomNavigationBar(
               currentIndex: currentIndex,
               onTap: (index) {
