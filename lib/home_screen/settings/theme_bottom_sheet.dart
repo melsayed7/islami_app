@@ -70,7 +70,7 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
   Widget getUnSelectedTheme(String text) {
     return Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 20,
       ),
     );

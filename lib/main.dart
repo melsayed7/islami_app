@@ -5,12 +5,28 @@ import 'package:islami_app/home_screen/home_screen.dart';
 import 'package:islami_app/my_theme.dart';
 import 'package:islami_app/provider/appProvider.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home_screen/quran/surah_name_details.dart';
 
-void main() {
-  runApp(ChangeNotifierProvider(
-      create: (BuildContext context) => AppProvider(), child: MyApp()));
+String saveLanguage = 'en';
+ThemeMode saveMode = ThemeMode.light;
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+  saveLanguage = prefs.getString('language') ?? '';
+  if (prefs.getString('mode') == 'light') {
+    saveMode = ThemeMode.light;
+  } else if (prefs.getString('mode') == 'dark') {
+    saveMode = ThemeMode.dark;
+  }
+  runApp(
+    ChangeNotifierProvider(
+      create: (BuildContext context) => AppProvider(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -33,4 +49,14 @@ class MyApp extends StatelessWidget {
       darkTheme: MyTheme.darkTheme,
     );
   }
+
+/*void getSharedPref()async{
+    final prefs = await SharedPreferences.getInstance();
+    saveLanguage = prefs.getString('language') ?? '';
+    if(prefs.getString('mode') == 'light'){
+      appProvider?.changeMode(ThemeMode.light);
+    }else if(prefs.getString('mode') == 'dark'){
+      appProvider?.changeMode(ThemeMode.dark);
+    }
+  }*/
 }
